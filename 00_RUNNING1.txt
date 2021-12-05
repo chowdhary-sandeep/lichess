@@ -1,6 +1,0 @@
--------game_lengths-------
--------white activity-------
--------black activity-------
--------game_type_simplified-------
--------game_type_simplified-------
--------won_-------
