@@ -108,10 +108,11 @@ def simulate_game_only_activity_VI(game_,MOVES_,dict_board0,dict_piece_loc0,boar
                 if (not dict_board[destination_] =='') and (not dict_board[destination_][1] =='K'):
                     points_lost=dict_piece_values[dict_board[destination_][1]]
                     points_on_board[abs(1-is_white_move)]=points_on_board[abs(1-is_white_move)]-points_lost
-                if points_on_board[0]<13 and points_on_board[1]<13:
-                    points_on_board_endgame=points_on_board
+                if (points_on_board[0]<13) and (points_on_board[1]<13) and (endgame_reached==0):
+                    points_on_board_endgame=points_on_board.copy()
                     endgame_reached=1
                     move_on_which_endgame_reached=it
+                    dict_pieces_endgame=dict_board.copy()
 
                     
 
@@ -386,10 +387,11 @@ def simulate_game_only_activity_VI(game_,MOVES_,dict_board0,dict_piece_loc0,boar
                             points_lost=dict_piece_values[dict_board[destination_][1]]
                             points_on_board[abs(1-is_white_move)]=points_on_board[abs(1-is_white_move)]-points_lost
                         dict_piece_loc[dict_board[destination_]]=''
-                        if points_on_board[0]<13 and points_on_board[1]<13:
-                            points_on_board_endgame=points_on_board
+                        if (points_on_board[0]<13) and (points_on_board[1]<13) and (endgame_reached==0):
+                            points_on_board_endgame=points_on_board.copy()
                             endgame_reached=1
                             move_on_which_endgame_reached=it
+                            dict_pieces_endgame=dict_board.copy()
                             
                     if not piece_to_move =='':
                         dict_piece_loc[piece_to_move]=destination_
